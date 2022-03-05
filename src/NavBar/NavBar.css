@@ -1,0 +1,21 @@
+.NavBar {
+  align-items: center;
+  background-color: transparent;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+  font-family: "Iceland", cursive;
+  text-shadow: 5px;
+}
+.NavBar-CartIcon {
+  margin: 25px;
+  height: 45px;
+  cursor: pointer;
+}
