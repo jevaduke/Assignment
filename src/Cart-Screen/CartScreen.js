@@ -15,7 +15,7 @@ const CartScreen = () => {
       }}
     >
       <div className="NavBar">
-        <img className="NavBar-CartIcon" src={backIcon} />
+        <a href="/"><img className="NavBar-CartIcon" src={backIcon} /></a>
         <div className="NavBar-title">Your Cart</div>
       </div>
     </div>

@@ -3,5 +3,8 @@
   color: black;
   background-color: transparent;
   margin: 20px;
+  justify-content: space-around;
   text-align: center;
+  display: flex;
+  
 }
