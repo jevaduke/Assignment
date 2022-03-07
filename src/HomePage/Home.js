@@ -4,7 +4,6 @@ import NavBar from "../NavBar/NavBar";
 import backgroundImg from "../resourses/pizza2.jpg";
 
 const Home = () => {
- 
   return (
     <div
       style={{

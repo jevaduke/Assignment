@@ -1,3 +1,6 @@
-.CartButton {
-  justify-content: space-around;
+.choiceButton {
+  padding-bottom: 200rem;
+}
+.bulletIcons {
+  list-style-type: none;
 }

@@ -7,8 +7,6 @@ const Category = () => {
   return (
     <div className="Category" styles={{ backgroundImage: { backgroundImg } }}>
       <MaterialCard />
-      <MaterialCard />
-      
     </div>
   );
 };
