@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MaterialCard.css";
-import Axios from "axios";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const MaterialCard = () => {
-  // FETCHING JSON
-  const getResponse = () => {
-    Axios.get("https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68")
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        console.log(jsonResponse);
-      });
-  };
+const MaterialCard = ({
+  name,
+  description,
+  isVeg,
+  rating,
+  price,
+  img_url,
+  size,
+  toppings,
+}) => {
+  console.log(name);
   return (
     <div>
       <Card sx={{ maxWidth: 350 }}>
@@ -23,19 +24,20 @@ const MaterialCard = () => {
           component="img"
           alt="green iguana"
           height="140"
-          image="https://upload.wikimedia.org/wikipedia/commons/6/6f/Pizza_on_stone.jpg"
+          image={img_url}
         />
         <CardContent>
           <div className="row row-cols-2">
             <Typography gutterBottom variant="h5" component="div">
-              Margherita
+              {name}
             </Typography>
             <div className="ml-2">
-              <span className="badge bg-success">Veg</span>
+              {isVeg && <span className="badge bg-success">Veg</span>}
+              {!isVeg && <span className="badge bg-danger">Non-Veg</span>}
             </div>
           </div>
           <Typography variant="body2" color="text.secondary">
-            A classic delight with 100% Real mozzarella cheese
+            {description}
           </Typography>
         </CardContent>
         <div className="row row-cols-2">
@@ -182,7 +184,8 @@ const MaterialCard = () => {
           </div>
         </div>
         <div className="row row-cols-2">
-          <h3 className="mt-2">₹ 238</h3> <h3 className="mt-2">⭐ 3.5</h3>
+          <h3 className="mt-2">₹ {price}</h3>{" "}
+          <h3 className="mt-2">⭐ {rating}</h3>
         </div>
         {/* <CardActions>
 
