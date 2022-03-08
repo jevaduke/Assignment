@@ -16,14 +16,13 @@ const MaterialCard = ({
   size,
   toppings,
 }) => {
-  console.log(name);
   return (
-    <div>
+    <div className="MaterialCard">
       <Card sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"
           alt="green iguana"
-          height="140"
+          height="160"
           image={img_url}
         />
         <CardContent>
@@ -187,10 +186,6 @@ const MaterialCard = ({
           <h3 className="mt-2">₹ {price}</h3>{" "}
           <h3 className="mt-2">⭐ {rating}</h3>
         </div>
-        {/* <CardActions>
-
-          <h3>₹ 238</h3> <h3>⭐ 3.5</h3>
-        </CardActions> */}
         <Button className="mb-2" variant="outlined">
           Add To Cart
         </Button>

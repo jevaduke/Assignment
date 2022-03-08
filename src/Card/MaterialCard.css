@@ -4,3 +4,7 @@
 .bulletIcons {
   list-style-type: none;
 }
+
+.MaterialCard {
+  margin-bottom: 15px;
+}
