@@ -6,9 +6,14 @@ const NavBar = () => {
   return (
     <div className="NavBar">
       <div className="NavBar-title">Tom's Pizzas</div>
-      <a href="/cart">
-        <img className="NavBar-CartIcon" src={cartIcon} alt="cartIcon" />
-      </a>
+      <div className="navbar-rightSection">
+        <button type="button" class="btn btn-light">
+          Filter
+        </button>
+        <a href="/cart">
+          <img className="NavBar-CartIcon" src={cartIcon} alt="cartIcon" />
+        </a>
+      </div>
     </div>
   );
 };

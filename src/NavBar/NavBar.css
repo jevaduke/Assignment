@@ -1,7 +1,7 @@
 @media only screen and (min-width: 1224px) {
   .NavBar {
     align-items: center;
-    background-color: transparent;
+    background-color: black;
     height: 60px;
     display: flex;
     justify-content: space-between;
