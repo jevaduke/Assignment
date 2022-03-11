@@ -11,7 +11,7 @@ console.log("CP", cartProducts);
 console.log("CA", cartArray);
 let total = 0;
 
-if (cartArray.length !== 0 && cartProducts.length !== 0) {
+if (cartArray && cartProducts) {
   cartArray.map((ca) =>
     cartProducts.map((cp) => {
       if (ca.id === cp) {
