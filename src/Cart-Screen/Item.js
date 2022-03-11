@@ -1,23 +1,19 @@
 import React, { useState } from "react";
 import "./Item.css";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import pizza from "../resourses/pizza1.jpg";
 
-const Item = () => {
+import CardActions from "@mui/material/CardActions";
+import Button from "@mui/material/Button";
+
+const Item = ({ name, description, price, isVeg, rating, img_url }) => {
   const [count, setCount] = useState(0);
-  
+
   return (
     <div className="cart-items">
       <div className="CartMaterialCard">
         <div className="image-item">
           <img
             className="cartImage"
-            src={pizza}
+            src={img_url}
             width="250"
             height="250"
             alt="cartImg"
@@ -26,16 +22,14 @@ const Item = () => {
 
         <div className="card-content1">
           <div>
-            <h1>Double Cheese Margherita</h1>
+            <h1>{name}</h1>
           </div>
           <div>
-            <h6>
-              A classic delight loaded with extra 100% real mozzarella cheese
-            </h6>
+            <h6>{description}</h6>
           </div>
           <div className="row1">
-            <h6>₹ 355</h6>
-            <h6>⭐ 5</h6>
+            <h6>₹ {price}</h6>
+            <h6>⭐ {rating}</h6>
             <div className="row1-c">
               <Button
                 className="mb-1"
@@ -63,26 +57,6 @@ const Item = () => {
             </Button>
           </CardActions>
         </div>
-      </div>
-      <div>
-        <Box sx={{ minWidth: 275 }}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography variant="h5" component="div">
-                Total Price:
-              </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                ₹ 325
-              </Typography>
-              <Typography variant="body2">Proceed to checkout</Typography>
-            </CardContent>
-            <CardActions>
-              <Button className="mb-2" variant="outlined">
-                Checkout
-              </Button>
-            </CardActions>
-          </Card>
-        </Box>
       </div>
     </div>
   );

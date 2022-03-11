@@ -1,0 +1,4 @@
+.Body_Cart {
+  display: flex;
+  flex-direction: column;
+}
