@@ -15,6 +15,9 @@ const Category = () => {
   const [vegCat, setVegCat] = useState("allData");
   console.log("nonVegProducts", nonVegProducts);
   const [checkedValues, setCheckedValues] = useState([]);
+  const [above3, setAbove3] = useState([]);
+  const [above4, setAbove4] = useState([]);
+
   const cvProps = {
     responseData,
     checkedValues,
@@ -31,45 +34,32 @@ const Category = () => {
     );
 
     setResponseData(data);
+    localStorage.setItem("cartArray", JSON.stringify(data));
     setLoading(false);
   };
   let vegFilteredProducts = responseData.map((item) => {
-    // console.log(item.isVeg);
-
     if (item.isVeg === true) {
-      // console.log("I am veg");
       vegProducts.push(item);
     }
-    // return item;
   });
   let vProducts = [...new Set(vegProducts)];
-  // console.log("v-products", vProducts);
 
   let nonVegFilteredProducts = responseData.map((item) => {
-    // console.log(item.isVeg);
-
     if (item.isVeg === false) {
-      // console.log("I am non-veg");
       nonVegProducts.push(item);
     }
-    // return item;
   });
 
   let nvProducts = [...new Set(nonVegProducts)];
-  // console.log("nv-products", nvProducts);
-  // const productsFilter = (responseData) => {
-  //   let vegFilter = responseData.map((item) => {
-  //     console.log(item.isVeg);
-  //   });
-  // };
+
   useEffect(() => {
     getData();
-    // productsFilter();
   }, []);
 
   return (
     <div className="Category" styles={{ backgroundImage: { backgroundImg } }}>
       <OutlinedCard {...cvProps} />
+
       {loading && (
         <img src={progressindicator} style={{ width: 100, height: 100 }} />
       )}
@@ -89,6 +79,7 @@ const Category = () => {
                     img_url={item.img_url}
                     size={item.size}
                     toppings={item.toppings}
+                    id={item.id}
                   />
                 );
               })}
@@ -105,6 +96,7 @@ const Category = () => {
                     img_url={item.img_url}
                     size={item.size}
                     toppings={item.toppings}
+                    id={item.id}
                   />
                 );
               })}
@@ -121,6 +113,7 @@ const Category = () => {
                     img_url={item.img_url}
                     size={item.size}
                     toppings={item.toppings}
+                    id={item.id}
                   />
                 );
               })}

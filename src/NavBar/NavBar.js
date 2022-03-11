@@ -7,9 +7,6 @@ const NavBar = () => {
     <div className="NavBar">
       <div className="NavBar-title">Tom's Pizzas</div>
       <div className="navbar-rightSection">
-        <button type="button" class="btn btn-light">
-          Filter
-        </button>
         <a href="/cart">
           <img className="NavBar-CartIcon" src={cartIcon} alt="cartIcon" />
         </a>

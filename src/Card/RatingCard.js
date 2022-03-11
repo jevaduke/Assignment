@@ -6,11 +6,12 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-export default function OutlinedCard(props) {
+export default function RatingCard(props) {
   console.log("props", props);
   const handleChecked = (e) => {
     console.log("e", e.target.value);
     var vegCheckBox = document.getElementById("veg");
+    // console.log(vegCheckBox);
     var nonvegCheckBox = document.getElementById("nonVeg");
     if (vegCheckBox.checked === true) {
       props.setVegCat("veg");
@@ -26,6 +27,7 @@ export default function OutlinedCard(props) {
       console.log(props.vegCat);
       console.log("all data");
     }
+
   };
 
   return (
@@ -35,15 +37,15 @@ export default function OutlinedCard(props) {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox id="veg" value="veg" onChange={handleChecked} />
+                <Checkbox id="above3" value="above3" onChange={handleChecked} />
               }
               label="Veg"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  id="nonVeg"
-                  value="non_veg"
+                  id="4andAbove"
+                  value="4andAbove"
                   onChange={handleChecked}
                 />
               }

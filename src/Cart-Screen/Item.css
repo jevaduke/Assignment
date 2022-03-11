@@ -1,6 +1,40 @@
+
 .cart-items {
   display: flex;
   align-items: center;
   margin: 25px;
   justify-content: space-between;
+}
+.cartCard {
+  display: flex;
+}
+.CartMaterialCard {
+  display: flex;
+  height: 250px;
+  width: 900px;
+  background-color: #5b6a7a;
+  border-radius: 25px;
+}
+.image-item {
+  height: 250;
+}
+.cartImage {
+  border-radius: 25px;
+}
+
+.card-content1 {
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.row1 {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.row1-c {
+  display: flex;
+}
+.countVar {
+  margin: 8px;
 }

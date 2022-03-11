@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MaterialCard.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { cart } from "../Cart-Screen/Cart";
 
 const MaterialCard = ({
+  id,
   name,
   description,
   isVeg,
   rating,
   price,
   img_url,
-  size,
-  toppings,
 }) => {
+  const addToCart = (id) => {
+    console.log(id);
+    cart.push(id);
+    localStorage.setItem("cartProducts", JSON.stringify(cart));
+    console.log(cart);
+  };
   return (
     <div className="MaterialCard">
       <Card sx={{ maxWidth: 350 }}>
@@ -186,9 +192,16 @@ const MaterialCard = ({
           <h3 className="mt-2">₹ {price}</h3>{" "}
           <h3 className="mt-2">⭐ {rating}</h3>
         </div>
-        <Button className="mb-2" variant="outlined">
-          Add To Cart
-        </Button>
+
+        <div key={id}>
+          <Button
+            className="mb-2"
+            variant="outlined"
+            onClick={() => addToCart(id)}
+          >
+            Add To Cart
+          </Button>
+        </div>
       </Card>
     </div>
   );
