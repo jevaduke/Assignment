@@ -8,9 +8,6 @@ const cartArray = JSON.parse(localStorage.getItem("cartArray"));
 console.log("CP", cartProducts);
 console.log("CA", cartArray);
 
-// for (var i = 0; i <= cartArray.length; i++) {
-//   console.log(cartArray[i]);
-// }
 cartArray.map((ca) => {
   cartProducts.map((cp) => {
     if (ca.id === cp) {
