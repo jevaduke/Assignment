@@ -17,9 +17,9 @@ const Item = ({ name, description, price, isVeg, rating, img_url }) => {
   return (
     <div>
       {isTabletOrMobile && (
-        <div className="Cart_MaterialCard">
+        <div className="container">
           <div className="MaterialCard">
-            <Card sx={{ maxWidth: 550 }}>
+            <Card sx={{ maxWidth: 350 }}>
               <CardMedia
                 component="img"
                 alt="green iguana"
@@ -46,7 +46,27 @@ const Item = ({ name, description, price, isVeg, rating, img_url }) => {
                 <h3 className="mt-2">⭐ {rating}</h3>
               </div>
 
-              <div className="RemoveButton">
+              <div className="row1-c">
+                <div className="row-items">
+                  <Button
+                    className="mb-1"
+                    variant="contained"
+                    onClick={() => setCount(count - 1)}
+                  >
+                    -1
+                  </Button>
+                  <div className="countVar">
+                    <h4>{count}</h4>
+                  </div>
+
+                  <Button
+                    className="mb-1"
+                    variant="contained"
+                    onClick={() => setCount(count + 1)}
+                  >
+                    +1
+                  </Button>
+                </div>
                 <Button className="mb-2" variant="outlined">
                   Remove From Cart
                 </Button>
@@ -69,11 +89,15 @@ const Item = ({ name, description, price, isVeg, rating, img_url }) => {
             </div>
 
             <div className="card-content1">
-              <div>
+              <div className="Title-Content">
                 <h1>{name}</h1>
               </div>
               <div>
                 <h6>{description}</h6>
+              </div>
+              <div className="ml-2">
+                {isVeg && <span className="badge bg-success">Veg</span>}
+                {!isVeg && <span className="badge bg-danger">Non-Veg</span>}
               </div>
               <div className="row1">
                 <h6>₹ {price}</h6>

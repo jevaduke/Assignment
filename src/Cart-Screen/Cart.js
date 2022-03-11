@@ -28,7 +28,7 @@ if (cartArray && cartProducts) {
 export const Cart = () => {
   console.log(cart);
   return (
-    <div className="Cart">
+    <div>
       <CartScreenNavBar />
       <div className="content">
         <div>
