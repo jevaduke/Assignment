@@ -7,7 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./TotalCalc.css";
 
-const TotalCalc = () => {
+const TotalCalc = ({ total }) => {
+  console.log(total);
   return (
     <div className="TotalCalc">
       <Box sx={{ minWidth: 275 }}>
@@ -17,7 +18,7 @@ const TotalCalc = () => {
               Total Price:
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              ₹ 325
+              ₹ {total || 0}
             </Typography>
             <Typography variant="body2">Proceed to checkout</Typography>
           </CardContent>
