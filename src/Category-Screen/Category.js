@@ -9,14 +9,12 @@ import OutlinedCard from "../Card/OutlinedCard";
 const Category = () => {
   const [responseData, setResponseData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [vegProducts, setVegProducts] = useState([]);
+  const vegProducts = [];
 
-  const [nonVegProducts, setNonVegProducts] = useState([]);
+  const nonVegProducts = [];
   const [vegCat, setVegCat] = useState("allData");
   console.log("nonVegProducts", nonVegProducts);
   const [checkedValues, setCheckedValues] = useState([]);
-  const [above3, setAbove3] = useState([]);
-  const [above4, setAbove4] = useState([]);
 
   const cvProps = {
     responseData,
@@ -37,16 +35,20 @@ const Category = () => {
     localStorage.setItem("cartArray", JSON.stringify(data));
     setLoading(false);
   };
-  let vegFilteredProducts = responseData.map((item) => {
+  responseData.map((item) => {
     if (item.isVeg === true) {
-      vegProducts.push(item);
+      return vegProducts.push(item);
+    } else {
+      return 0;
     }
   });
   let vProducts = [...new Set(vegProducts)];
 
-  let nonVegFilteredProducts = responseData.map((item) => {
+  responseData.map((item) => {
     if (item.isVeg === false) {
-      nonVegProducts.push(item);
+      return nonVegProducts.push(item);
+    } else {
+      return 0;
     }
   });
 
@@ -61,7 +63,11 @@ const Category = () => {
       <OutlinedCard {...cvProps} />
 
       {loading && (
-        <img src={progressindicator} style={{ width: 100, height: 100 }} />
+        <img
+          src={progressindicator}
+          style={{ width: 100, height: 100 }}
+          alt="progressImg"
+        />
       )}
       {!loading && (
         <div className="container">
