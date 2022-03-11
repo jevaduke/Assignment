@@ -11,17 +11,19 @@ console.log("CP", cartProducts);
 console.log("CA", cartArray);
 let total = 0;
 
-cartArray.map((ca) =>
-  cartProducts.map((cp) => {
-    if (ca.id === cp) {
-      total = total + ca.price;
-      console.log("CAID", ca.id);
-      return cart.push(ca);
-    } else {
-      return 0;
-    }
-  })
-);
+if (cartArray.length !== 0 && cartProducts.length !== 0) {
+  cartArray.map((ca) =>
+    cartProducts.map((cp) => {
+      if (ca.id === cp) {
+        total = total + ca.price;
+        console.log("CAID", ca.id);
+        return cart.push(ca);
+      } else {
+        return 0;
+      }
+    })
+  );
+}
 
 export const Cart = () => {
   // const [total, setTotal] = useState(0);
