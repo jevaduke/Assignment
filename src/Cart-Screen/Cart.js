@@ -13,6 +13,7 @@ console.log("CA", cartArray);
 const cartArr = cartArray.map((ca) => {
   cartProducts.map((cp) => {
     if (ca.id === cp) {
+      
       console.log("CAID", ca.id);
       cart.push(ca);
     }
