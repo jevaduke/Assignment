@@ -61,7 +61,7 @@ const Category = () => {
   return (
     <div className="Category" styles={{ backgroundImage: { backgroundImg } }}>
       <OutlinedCard {...cvProps} />
-
+      <br />
       {loading && (
         <img
           src={progressindicator}

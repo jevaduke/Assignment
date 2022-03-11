@@ -26,10 +26,6 @@ if (cartArray && cartProducts) {
 }
 
 export const Cart = () => {
-  // const [total, setTotal] = useState(0);
-  // cart.map((item) => {
-  //   return setTotal(total + item.price);
-  // });
   console.log(cart);
   return (
     <div className="Cart">
@@ -51,7 +47,6 @@ export const Cart = () => {
               );
             })}
         </div>
-
         <div className="Category">
           <TotalCalc total={total} />
         </div>
