@@ -9,10 +9,12 @@ const cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
 const cartArray = JSON.parse(localStorage.getItem("cartArray"));
 console.log("CP", cartProducts);
 console.log("CA", cartArray);
+let total = 0;
 
 cartArray.map((ca) =>
   cartProducts.map((cp) => {
     if (ca.id === cp) {
+      total = total + ca.price;
       console.log("CAID", ca.id);
       return cart.push(ca);
     } else {
@@ -49,7 +51,7 @@ export const Cart = () => {
         </div>
 
         <div className="Category">
-          <TotalCalc total={0} />
+          <TotalCalc total={total} />
         </div>
       </div>
     </div>
