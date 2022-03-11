@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CartScreenNavBar from "./CartScreenNavBar";
 import Item from "./Item";
 
@@ -8,13 +8,13 @@ const cartArray = JSON.parse(localStorage.getItem("cartArray"));
 console.log("CP", cartProducts);
 console.log("CA", cartArray);
 
-cartArray.map((ca) => {
-  cartProducts.map((cp) => {
-    if (ca.id === cp) {
-      console.log("CAID", ca.id);
-    }
-  });
-});
+// cartArray.map((ca) => {
+//   cartProducts.map((cp) => {
+//     if (ca.id === cp) {
+//       console.log("CAID", ca.id);
+//     }
+//   });
+// });
 
 export const Cart = () => {
   console.log(cart);
